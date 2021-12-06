@@ -7,7 +7,10 @@ class MyFirstPlatformChannel {
 
   Future<void> version() async {
     try {
-      final result = await _methodChannel.invokeMethod("version");
+      final result = await _methodChannel.invokeMethod(
+        "version",
+        {"name": "Matheus", "lastName": "Muller", "age": 21},
+      );
       print(result);
     } catch (e) {
       print("error $e");
